@@ -29,7 +29,7 @@ variable "igw_tags" {
 
 variable "public_subnet_cidrs" {
     type = list
-    validation {
+    validation {    #terraform variable size validation
         condition = length(var.public_subnet_cidrs) == 2
         error_message = "please provide 2 valid public subnet cidr"
     }
@@ -84,7 +84,7 @@ variable "database_route_table_tags" {
 }
 
 variable "is_peering_required" {
-    type = bool
+    type = bool  #boolean 
     default = false
 }
 

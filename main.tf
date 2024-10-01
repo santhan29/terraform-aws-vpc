@@ -102,7 +102,7 @@ resource "aws_nat_gateway" "main" {
       Name = local.resource_name
     }
   )
-  depends_on = [aws_internet_gateway.main]
+  depends_on = [aws_internet_gateway.main]  #w/o internet gateway nat gateway wont work
 }
 
 resource "aws_route_table" "public" {
